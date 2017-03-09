@@ -85,6 +85,8 @@ import HubFramework
     
     private func registerDefaultComponentFactory() {
         hubManager.componentRegistry.register(componentFactory: DefaultComponentFactory(), namespace: DefaultComponentFactory.namespace)
+        hubManager.componentRegistry.register(componentFactory: CitiesComponentFactory(), namespace: "cities")
+        
     }
     
     // MARK: - Feature registrations

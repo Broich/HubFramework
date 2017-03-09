@@ -17,6 +17,13 @@ class CitiesContentOperation: HUBContentOperation {
 
         viewModelBuilder.navigationBarTitle = featureInfo.title
 
+        let rowBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "row-01")
+        rowBuilder.componentNamespace = "cities"
+        rowBuilder.componentName = "row"
+        rowBuilder.title = "Hello World"
+        rowBuilder.subtitle = "This is my first component"
+        
+
         delegate?.contentOperationDidFinish(self)
 
     }
