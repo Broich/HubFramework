@@ -57,6 +57,11 @@ class RootContentOperation: HUBContentOperation {
         stickyHeaderRowBuilder.title = "Sticky header"
         stickyHeaderRowBuilder.subtitle = "A feature demonstrating how to build a sticky header"
         stickyHeaderRowBuilder.targetBuilder.uri = .stickyHeaderViewURI
+
+        let citiesHeaderRowBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "cities")
+        citiesHeaderRowBuilder.title = "Cities"
+        citiesHeaderRowBuilder.subtitle = "An example row to extend the current demo content"
+        citiesHeaderRowBuilder.targetBuilder.uri = .citiesViewURI
         
         delegate?.contentOperationDidFinish(self)
     }

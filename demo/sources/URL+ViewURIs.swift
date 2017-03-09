@@ -51,6 +51,10 @@ extension URL {
     static var stickyHeaderViewURI: URL {
         return URL(viewURI: "stickyHeader")
     }
+
+    static var citiesViewURI: URL {
+        return URL(viewURI: "cities")
+    }
 }
 
 private extension URL {

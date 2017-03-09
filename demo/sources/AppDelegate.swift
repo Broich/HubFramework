@@ -57,6 +57,7 @@ import HubFramework
         registerReallyLongListFeature()
         registerTodoListFeature()
         registerStickyHeaderFeature()
+        registerCitiesFeature()
         startLiveService()
         
         return true
@@ -173,6 +174,19 @@ import HubFramework
             viewURIPredicate: HUBViewURIPredicate(viewURI: .stickyHeaderViewURI),
             title: "Sticky Header",
             contentOperationFactories: [contentOperationFactory],
+            contentReloadPolicy: nil,
+            customJSONSchemaIdentifier: nil,
+            actionHandler: nil,
+            viewControllerScrollHandler: nil
+        )
+    }
+
+    private func registerCitiesFeature() {
+        hubManager.featureRegistry.registerFeature(
+            withIdentifier: "cities",
+            viewURIPredicate: HUBViewURIPredicate(viewURI: .citiesViewURI),
+            title: "Cities",
+            contentOperationFactories: [CitiesContentOperationFactory()],
             contentReloadPolicy: nil,
             customJSONSchemaIdentifier: nil,
             actionHandler: nil,
