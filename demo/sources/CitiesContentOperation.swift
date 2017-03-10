@@ -17,12 +17,29 @@ class CitiesContentOperation: HUBContentOperation {
 
         viewModelBuilder.navigationBarTitle = featureInfo.title
 
-        let rowBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "row-01")
-        rowBuilder.componentNamespace = "cities"
-        rowBuilder.componentName = "row"
-        rowBuilder.title = "Hello World"
-        rowBuilder.subtitle = "This is my first component"
-        
+//        let rowBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "row-01")
+//        rowBuilder.componentNamespace = "cities"
+//        rowBuilder.componentName = "row"
+//        rowBuilder.title = "Hello World"
+//        rowBuilder.subtitle = "This is my first component"
+
+
+        let cities = ["Madrid", "Rome", "Berlin", "Amsterdam"]
+        let countries = [
+            "Madrid" : "Spain",
+            "Rome" : "Italy",
+            "Berlin" : "Germany",
+            "Amsterdam" : "Netherlands"
+        ]
+
+        for city in cities {
+            let identifier = "city-\(city)"
+            let rowBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: identifier)
+            rowBuilder.componentNamespace = "cities"
+            rowBuilder.componentName = "row"
+            rowBuilder.title = city
+            rowBuilder.subtitle = countries[city]
+        }
 
         delegate?.contentOperationDidFinish(self)
 
