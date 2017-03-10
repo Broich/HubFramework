@@ -16,6 +16,10 @@ class CitiesComponentFactory: HUBComponentFactory {
             return CitiesRowComponent()
         }
 
+        if name == "image" {
+            return CitiesImageComponent()
+        }
+
         return nil
     }
 

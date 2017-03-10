@@ -12,7 +12,7 @@ import HubFramework
 class CitiesContentOperationFactory: HUBContentOperationFactory {
 
     func createContentOperations(forViewURI viewURI: URL) -> [HUBContentOperation] {
-        return [CitiesContentOperation()]
+        return [CitiesContentOperation(), CitiesImageContentOperation()]
     }
     
 }
